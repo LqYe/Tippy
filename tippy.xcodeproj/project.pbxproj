@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		984197771F4173E3002A093B /* tippy.gif in Resources */ = {isa = PBXBuildFile; fileRef = 984197761F4173E3002A093B /* tippy.gif */; };
 		984CDFD81F412B58009AE52F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984CDFD71F412B58009AE52F /* Constants.swift */; };
-		984CDFDA1F416A8D009AE52F /* tippy.gif in Resources */ = {isa = PBXBuildFile; fileRef = 984CDFD91F416A8D009AE52F /* tippy.gif */; };
 		989867531F3D92D5008551F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989867521F3D92D5008551F2 /* AppDelegate.swift */; };
 		989867551F3D92D5008551F2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989867541F3D92D5008551F2 /* ViewController.swift */; };
 		989867581F3D92D5008551F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 989867561F3D92D5008551F2 /* Main.storyboard */; };
@@ -37,19 +37,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		984197761F4173E3002A093B /* tippy.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = tippy.gif; path = ../../tippy.gif; sourceTree = "<group>"; };
 		984CDFD71F412B58009AE52F /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		984CDFD91F416A8D009AE52F /* tippy.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = tippy.gif; path = ../../tippy.gif; sourceTree = "<group>"; };
-		9898674F1F3D92D5008551F2 /* tippy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tippy.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9898674F1F3D92D5008551F2 /* tippy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = tippy.app; path = "/Users/ye/Documents/Xcode/tippy/build/Debug-iphoneos/tippy.app"; sourceTree = "<absolute>"; };
 		989867521F3D92D5008551F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		989867541F3D92D5008551F2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		989867571F3D92D5008551F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		989867591F3D92D5008551F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9898675C1F3D92D5008551F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9898675E1F3D92D5008551F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		989867631F3D92D5008551F2 /* tippyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tippyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		989867631F3D92D5008551F2 /* tippyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = tippyTests.xctest; path = "/Users/ye/Documents/Xcode/tippy/build/Debug-iphoneos/tippyTests.xctest"; sourceTree = "<absolute>"; };
 		989867671F3D92D5008551F2 /* tippyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tippyTests.swift; sourceTree = "<group>"; };
 		989867691F3D92D5008551F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9898676E1F3D92D5008551F2 /* tippyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tippyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9898676E1F3D92D5008551F2 /* tippyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = tippyUITests.xctest; path = "/Users/ye/Documents/Xcode/tippy/build/Debug-iphoneos/tippyUITests.xctest"; sourceTree = "<absolute>"; };
 		989867721F3D92D5008551F2 /* tippyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tippyUITests.swift; sourceTree = "<group>"; };
 		989867741F3D92D5008551F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		98B07A051F3EFD3200CF61CF /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
@@ -83,22 +83,11 @@
 		989867461F3D92D4008551F2 = {
 			isa = PBXGroup;
 			children = (
+				984197761F4173E3002A093B /* tippy.gif */,
 				989867511F3D92D5008551F2 /* tippy */,
 				989867661F3D92D5008551F2 /* tippyTests */,
 				989867711F3D92D5008551F2 /* tippyUITests */,
-				989867501F3D92D5008551F2 /* Products */,
-				984CDFD91F416A8D009AE52F /* tippy.gif */,
 			);
-			sourceTree = "<group>";
-		};
-		989867501F3D92D5008551F2 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				9898674F1F3D92D5008551F2 /* tippy.app */,
-				989867631F3D92D5008551F2 /* tippyTests.xctest */,
-				9898676E1F3D92D5008551F2 /* tippyUITests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		989867511F3D92D5008551F2 /* tippy */ = {
@@ -225,7 +214,7 @@
 				Base,
 			);
 			mainGroup = 989867461F3D92D4008551F2;
-			productRefGroup = 989867501F3D92D5008551F2 /* Products */;
+			productRefGroup = 989867461F3D92D4008551F2;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -244,7 +233,7 @@
 				9898675D1F3D92D5008551F2 /* LaunchScreen.storyboard in Resources */,
 				9898675A1F3D92D5008551F2 /* Assets.xcassets in Resources */,
 				989867581F3D92D5008551F2 /* Main.storyboard in Resources */,
-				984CDFDA1F416A8D009AE52F /* tippy.gif in Resources */,
+				984197771F4173E3002A093B /* tippy.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
