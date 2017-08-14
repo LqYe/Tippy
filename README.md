@@ -41,7 +41,7 @@ Question 2: "Swift uses [Automatic Reference Counting](https://developer.apple.c
  
 Answer: define a property in the class and use a closure (code block)  that refers to other instance properties in the same class to assign its value.
  
-## Credits:
+## Credits
 1. Basic Version: https://www.youtube.com/watch?v=lyR8w6zmxVc
 2. Add background image to launch screen: https://www.youtube.com/watch?v=6ql8ZcPi8uU
 3. Setting FirstResponder: https://developer.xamarin.com/recipes/ios/standard_controls/text_field/set-uitextfield-focus/
