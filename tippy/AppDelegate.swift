@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  tippy
 //
-//  Created by Liqiang Ye on 8/11/17.
+//  Created by Liqiang Ye on 8/12/17.
 //  Copyright © 2017 Liqiang Ye. All rights reserved.
 //
 
@@ -13,9 +13,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
+    /*
+     navigation bar settings
+    */
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        let navigationBarAppearace = UINavigationBar.appearance()
+        
+        //navigationBar color settings
+        navigationBarAppearace.barTintColor = UIColor(red:0.00, green:0.48, blue:1.00, alpha:1.0)
+        navigationBarAppearace.tintColor = UIColor.white
+        
+        // change navigation item title color
+        navigationBarAppearace.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.white, NSFontAttributeName: UIFont(name: "Helvetica", size: 22)!]
+        
         return true
     }
 
