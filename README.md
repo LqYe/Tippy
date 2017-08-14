@@ -36,6 +36,7 @@ Question 1: "What are your reactions to the iOS app development platform so far?
 Answer:  iOS app development is easier than I thought. I used to believe iOS development is complicated and time-consuming. But with Swift programing language and xocde’s simplified UI design, iOS app development is fun and fast. Currently, I still rely on many Youtube tutorials, stackoverflow answers and other online resources as I am new to swift iOS development. I hope to familiarize myself with swift syntax, iOS UI design, and other iOS development techniques during Codepath’s iOS bootcamp.
 In my words, outlets and actions in iOS are just simple “drag and connect “ to exchange messages\events between UI and controllers\code.
 iOS storyboard is just a virtual tool to help developers to drag and drop to lay out multiple application views, the transitions between them and connections from\to controllers. When “drag and drop” occurs, it creates corresponding xml elements in the storyboard xml source file. A outlet or action is an xml element with different attributes that associate with a UI xml element, for example, label. Objects and messages are created by using the xml element definition and passed to controllers during app start-up or running.
+
 Question 2: "Swift uses [Automatic Reference Counting](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/AutomaticReferenceCounting.html#//apple_ref/doc/uid/TP40014097-CH20-ID49) (ARC), which is not a garbage collector, to manage memory. Can you explain how you can get a strong reference cycle for closures? (There's a section explaining this concept in the link, how would you summarize as simply as possible?)"
  
 Answer: define a property in the class and use a closure (code block)  that refers to other instance properties in the same class to assign its value.
@@ -47,12 +48,12 @@ Answer: define a property in the class and use a closure (code block)  that refe
 4. Slidebar: https://www.youtube.com/watch?v=nfQzPYA7X6E
 5. Static Table View Settings: https://www.youtube.com/watch?v=VTfXfudzWxI
 6. Customizing navigation bar appearance:
-1)https://coderwall.com/p/dyqrfa/customize-navigation-bar-appearance-with-swift
-2)https://makeapppie.com/2015/03/21/swift-swift-using-the-navigation-bar-title-and-back-button/
-3)https://stackoverflow.com/questions/21447327/ios7-what-is-the-difference-in-all-these-color-bartintcolor-tintcolor-backgr
+   1) https://coderwall.com/p/dyqrfa/customize-navigation-bar-appearance-with-swift
+   2) https://makeapppie.com/2015/03/21/swift-swift-using-the-navigation-bar-title-and-back-button/
+   3) https://stackoverflow.com/questions/21447327/ios7-what-is-the-difference-in-all-these-color-bartintcolor-tintcolor-backgr
 7. Add App Icons
-1) http://appiconmaker.co/
-2) https://www.youtube.com/watch?v=m-zRNghYWkA
+   1) http://appiconmaker.co/
+   2) https://www.youtube.com/watch?v=m-zRNghYWkA
 
 
 ## License
