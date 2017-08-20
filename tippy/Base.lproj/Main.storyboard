@@ -103,6 +103,12 @@
                         <gestureRecognizers/>
                     </view>
                     <navigationItem key="navigationItem" title="Tip Calculator" id="5eI-oc-GiV">
+                        <barButtonItem key="leftBarButtonItem" title="Share" id="qIw-4x-W96">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="shareButtonAction:" destination="BYZ-38-t0r" id="4t1-Wg-tFe"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Settings" id="KbU-u2-IaS">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
@@ -183,10 +189,11 @@
                                                     <rect key="frame" x="16" y="8" width="296" height="29"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <segments>
+                                                        <segment title="Local"/>
                                                         <segment title="$"/>
                                                         <segment title="C$"/>
                                                         <segment title="¥"/>
-                                                        <segment title="€"/>
+                                                        <segment title="£"/>
                                                         <segment title="£"/>
                                                         <segment title="E£"/>
                                                     </segments>

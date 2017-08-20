@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Social
 
 class ViewController: UIViewController {
 
@@ -25,12 +26,14 @@ class ViewController: UIViewController {
     var defaultPercentage = Float(15)
     var defaultCurrencyIndex = 0
     
-    let currencyCodes = ["USD", "CAD", "CNY", "EUR", "GBP", "EGP"]
-    let currencies = ["$","C$","¥","€","£","E£"]
+    var sharedTipAmount = "0.00"
+    
+    let currencyCodes = ["Local", "USD", "CAD", "CNY", "EUR", "GBP", "EGP"]
+    let currencies = ["Local", "$","C$","¥","€","£","E£"]
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
         //record app launch timestamp
         saveAppLastLaunchTimestamp()
@@ -59,8 +62,10 @@ class ViewController: UIViewController {
                 
         if isKeyPresentInUserDefaults(key: const.DEFAULT_CURRENCY_INDEX) {
             defaultCurrencyIndex = Int(defaults.integer(forKey: const.DEFAULT_CURRENCY_INDEX))
-            loadCurrencySymbol(currencyIndex: defaultCurrencyIndex)
         }
+        
+        loadCurrencySymbol(currencyIndex: defaultCurrencyIndex)
+
     }
     
     func refreshBillAmount() {
@@ -126,17 +131,28 @@ class ViewController: UIViewController {
         let tip = bill * Double(Int(tipPercentage)) * 0.01
         let total = bill + tip
         
-        tipLabel.text = formatCurrencyValue(currencyValue: tip)
+        let tipAmount = formatCurrencyValue(currencyValue: tip)
+        tipLabel.text = tipAmount
+        sharedTipAmount = tipAmount
         
-        totalLabel.text = formatCurrencyValue(currencyValue: total)
+        let totalAmount = formatCurrencyValue(currencyValue: total)
+        totalLabel.text = totalAmount
+        
     }
     
     func formatCurrencyValue (currencyValue: Double) -> String{
         
         let currencyFormatter = NumberFormatter()
-        currencyFormatter.numberStyle = .currency
-        currencyFormatter.currencyCode = currencyCodes[defaultCurrencyIndex]
+        
+        if(defaultCurrencyIndex > 0) {
+            currencyFormatter.numberStyle = .currency
+            currencyFormatter.currencyCode = currencyCodes[defaultCurrencyIndex]
+        } else {
+            currencyFormatter.numberStyle = .currency
+        }
+        
         currencyFormatter.maximumFractionDigits = 2
+
         
         return currencyFormatter.string(from: NSNumber(value: currencyValue))!
     }
@@ -149,7 +165,15 @@ class ViewController: UIViewController {
     
     func loadCurrencySymbol(currencyIndex: Int) {
         //return bill currency placeholder
-        let symbol = currencies[currencyIndex]
+        var symbol = "$"
+        
+        if(currencyIndex > 0) {
+            symbol = currencies[currencyIndex]
+        } else {
+            let locale = Locale.current
+            symbol = locale.currencySymbol!
+        }
+        
         currencyLabel.text = symbol
     }
     
@@ -163,5 +187,81 @@ class ViewController: UIViewController {
         defaults.synchronize()
     }
     
-}
+    
+    @IBAction func shareButtonAction(_ sender: Any) {
+        
+        let alert = UIAlertController(title: "Share", message: "Share your tips", preferredStyle: .actionSheet)
+        
+        //Share on Facebook
+        let actionFb = UIAlertAction(title: "Share on Facebook", style: .default) { (action) in
+            
+            //check if user is connected to Facebook
+            if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeFacebook) {
+                
+                let post = SLComposeViewController(forServiceType: SLServiceTypeFacebook)!
+                
+                post.setInitialText("I tipped " + self.sharedTipAmount)
+                
+                self.present(post, animated: true, completion: nil)
+            } else {self.showAlert(service: "Facebook")}
+            
+        }
+        
+        //Share on Twitter
+        let actionTw = UIAlertAction(title: "Share on Twitter", style: .default) { (action) in
+            
+            //check if user is connected to Facebook
+            if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeTwitter) {
+                
+                let post = SLComposeViewController(forServiceType: SLServiceTypeTwitter)!
+                
+                post.setInitialText("I tipped " + self.sharedTipAmount)
+                
+                self.present(post, animated: true, completion: nil)
+            } else {self.showAlert(service: "Twitter")}
+            
+        }
+        
+        //Share on Sina Weibo
+        let actionWb = UIAlertAction(title: "Share on Weibo", style: .default) { (action) in
+            
+            //check if user is connected to Facebook
+            if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeSinaWeibo) {
+                
+                let post = SLComposeViewController(forServiceType: SLServiceTypeSinaWeibo)!
+                
+                post.setInitialText("I tipped " + self.sharedTipAmount)
+                
+                self.present(post, animated: true, completion: nil)
+            } else {self.showAlert(service: "Weibo")}
+            
+        }
+        
+        //Cancel
+        let actionCancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
 
+        
+        //Add action to action sheet
+        alert.addAction(actionFb)
+        alert.addAction(actionTw)
+        alert.addAction(actionWb)
+        alert.addAction(actionCancel)
+        
+        //display alert
+        self.present(alert, animated: true, completion: nil)
+        
+        
+    }
+    
+    func showAlert(service:String) {
+        let alert = UIAlertController(title: "Opps...", message: "You are not connected to \(service)", preferredStyle: .alert)
+        
+        let action = UIAlertAction(title: "Dismiss", style: .cancel, handler: nil)
+        
+        
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
+        
+    }
+    
+}
